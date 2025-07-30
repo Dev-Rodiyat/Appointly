@@ -5,3 +5,16 @@
   font-family: Arial, sans-serif;
   outline: none;
 }
+
+.mobile-menu-open .main-content,
+.mobile-menu-open header:not(.sticky),
+.mobile-menu-open footer {
+  z-index: 0;
+}
+
+.mobile-menu-open * {
+  z-index: 0 !important;
+}
+.mobile-menu-open #mobile-menu {
+  z-index: 200 !important;
+}
