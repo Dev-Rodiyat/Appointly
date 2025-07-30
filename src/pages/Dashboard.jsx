@@ -83,7 +83,6 @@ export default function Dashboard() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3 md:px-12">
-        {/* Charts */}
         <div className="space-y-6 lg:col-span-2">
           <ChartCard title="Appointments – next 7 days" description="Count of appointments per day">
             {isEmpty ? (
@@ -130,7 +129,6 @@ export default function Dashboard() {
           </ChartCard>
         </div>
 
-        {/* Recent list */}
         <div className="rounded-2xl border bg-white p-5 shadow-sm dark:bg-slate-900">
           <div className="flex items-center justify-between">
             <div>

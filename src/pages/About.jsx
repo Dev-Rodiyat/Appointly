@@ -40,7 +40,7 @@ export default function About() {
           <WhyCard
             icon={<ShieldCheck className="h-5 w-5" aria-hidden />}
             title="Local & private"
-            desc="Your data lives in your browser via localStorage—no account required."
+            desc="Your data lives in your browser via localStorage-no account required."
           />
           <WhyCard
             icon={<BarChart3 className="h-5 w-5" aria-hidden />}
@@ -97,10 +97,6 @@ export default function About() {
             q="Can I export my appointments?"
             a="Yes. From the Appointments page, export your current filtered list to a CSV file."
           />
-          {/* <FAQItem
-            q="Does it work offline?"
-            a="Your saved data remains on your device. If you’ve opened the app before, it will continue to show your appointments even without a connection."
-          /> */}
           <FAQItem
             q="What fields can I store?"
             a="Title, description, date, start/end time, status, location, tags, and notes."

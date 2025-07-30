@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { AlertTriangle } from "lucide-react";
 
@@ -30,7 +30,7 @@ export default function AppointmentForm({
     const [errors, setErrors] = useState({});
     const [conflicts, setConflicts] = useState([]);
 
-    const DELIM_RE = /[,\s]+/;            // comma OR any whitespace
+    const DELIM_RE = /[,\s]+/;
 
     function cleanTag(t) {
         return String(t || "").trim();
@@ -53,9 +53,9 @@ export default function AppointmentForm({
     function handleTagsChange(e) {
         const raw = e.target.value;
         const arr = raw
-            .split(/[,\s]+/)        // ✅ split on comma(s) OR spaces/tabs/newlines
+            .split(/[,\s]+/)
             .map((t) => t.trim())
-            .filter(Boolean);       // remove empties
+            .filter(Boolean);
         setValues((v) => ({ ...v, tags: arr }));
     }
 
@@ -108,7 +108,6 @@ export default function AppointmentForm({
     function handleTagsChange(e) {
         const raw = e.target.value;
 
-        // If user typed a delimiter, split and commit all but the last piece.
         if (DELIM_RE.test(raw)) {
             const parts = raw.split(DELIM_RE);
             const last = parts.pop() ?? "";
@@ -116,7 +115,7 @@ export default function AppointmentForm({
             if (newTags.length) {
                 setValues((v) => ({ ...v, tags: mergeUniqueTags(v.tags || [], newTags) }));
             }
-            setTagField(last); // keep typing the trailing piece
+            setTagField(last);
         } else {
             setTagField(raw);
         }
@@ -124,14 +123,13 @@ export default function AppointmentForm({
 
     function handleTagsKeyDown(e) {
         if (e.key === "Enter" || e.key === "," || e.key === " ") {
-            e.preventDefault();   // don't submit form
+            e.preventDefault();
             commitDraft();
         } else if (
             e.key === "Backspace" &&
             tagField === "" &&
             (values.tags?.length || 0) > 0
         ) {
-            // Pull last tag back into the field for quick edit
             const last = values.tags[values.tags.length - 1];
             setValues((v) => ({ ...v, tags: v.tags.slice(0, -1) }));
             setTagField(last);

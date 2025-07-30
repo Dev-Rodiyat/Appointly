@@ -166,7 +166,6 @@ export default function Appointments() {
                         </div>
                     </div>
 
-                    {/* Tag */}
                     <div>
                         <label className="block text-xs font-medium uppercase tracking-wide text-slate-500">Tag</label>
                         <div className="mt-1 flex items-center rounded-lg border px-2">
@@ -181,7 +180,6 @@ export default function Appointments() {
                         </div>
                     </div>
 
-                    {/* Date range */}
                     <div className="grid grid-cols-2 gap-2">
                         <div>
                             <label className="block text-xs font-medium uppercase tracking-wide text-slate-500">From</label>
